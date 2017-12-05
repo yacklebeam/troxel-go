@@ -38,3 +38,25 @@ Returns union of sets X and Y (X v Y)
 > **SetIntersection (X, Y []string) []string**
 
 Returns intersection of sets X and Y (X ^ Y)
+
+## Example
+
+```
+package main
+
+import (
+    "github.com/yacklebeam/troxel-go"
+    "fmt"
+)
+
+func main() {
+    var X, Y []string
+    X = trx.ToSet(trx.ReadFlatFileToSlice("test.txt"))
+    Y = trx.ToSet(trx.ReadFlatFileToSlice("test2.txt"))
+    
+    fmt.Println(trx.SetDifference(X, Y))
+    fmt.Println(trx.SetDifference(Y, X))
+    fmt.Println(trx.SetUnion(X, Y))
+    fmt.Println(trx.SetIntersection(X, Y))
+}
+```
