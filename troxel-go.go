@@ -4,6 +4,7 @@ import (
     "bufio"
     "log"
     "os"
+    "strings"
 )
 
 func stringSetContains(s []string, e string) bool {
@@ -87,6 +88,30 @@ func SetIntersection(X, Y []string) []string {
         if stringSetContains(Y, x) {//in x, and in y
             ret = append(ret, x)
         }
+    }
+
+    return ret
+}
+
+func ReadCSVFileToList(filename string) [][]string {
+    file, err := os.Open(filename)
+
+    var ret [][]string
+
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
+
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        var text = scanner.Text()
+        var item = strings.Split(text, ",")
+        ret = append(ret, item)
+    }
+
+    if err := scanner.Err(); err != nil {
+        log.Fatal(err)
     }
 
     return ret
