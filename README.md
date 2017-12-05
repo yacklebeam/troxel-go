@@ -17,3 +17,7 @@ import (
     "github.com/yacklebeam/troxel-go"
 )
 ```
+
+### Documentation
+
+https://github.com/yacklebeam/troxel-go/tree/master/documentation
