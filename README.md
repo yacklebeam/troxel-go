@@ -5,6 +5,9 @@ Troxel GO Library
 
 ```
 go get github.com/yacklebeam/troxel-go
+
+cd %GOPATH%/src/github.com/yacklebeam/troxel-go
+go build
 ```
 
 ## Import
@@ -39,6 +42,10 @@ Returns union of sets X and Y (X v Y)
 
 Returns intersection of sets X and Y (X ^ Y)
 
+> **ReadCSVFileToList (filename string) [][]string**
+
+Reads CSV file, and returns a list of lists of the items
+
 ## Example
 
 ```
@@ -50,7 +57,7 @@ import (
 )
 
 func main() {
-    var X, Y []string
+    var X, Y, Z []string
     X = trx.ToSet(trx.ReadFlatFileToSlice("test.txt"))
     Y = trx.ToSet(trx.ReadFlatFileToSlice("test2.txt"))
     
@@ -58,5 +65,8 @@ func main() {
     fmt.Println(trx.SetDifference(Y, X))
     fmt.Println(trx.SetUnion(X, Y))
     fmt.Println(trx.SetIntersection(X, Y))
+
+    Z = trx.ReadCSVFileToList("test.csv")
+    fmt.Println(Z)
 }
 ```
