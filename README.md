@@ -6,8 +6,8 @@ Troxel GO Library
 ```
 go get github.com/yacklebeam/troxel-go
 
-cd %GOPATH%/src/github.com/yacklebeam/troxel-go
-go build
+to update:
+go get -u github.com/yacklebeam/troxel-go
 ```
 
 ## Import
