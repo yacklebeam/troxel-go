@@ -1,7 +1,7 @@
 # troxel-go
-Troxel GO Library
+A handy GO Library
 
-## Download
+### Download
 
 ```
 go get github.com/yacklebeam/troxel-go
@@ -10,7 +10,7 @@ to update:
 go get -u github.com/yacklebeam/troxel-go
 ```
 
-## Import
+### Import
 
 ```
 import (
