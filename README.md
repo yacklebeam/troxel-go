@@ -21,3 +21,7 @@ import (
 ### Documentation
 
 https://github.com/yacklebeam/troxel-go/tree/master/documentation
+
+### Examples
+
+https://github.com/yacklebeam/troxel-go/tree/master/examples
