@@ -57,7 +57,9 @@ import (
 )
 
 func main() {
-    var X, Y, Z []string
+    var X, Y []string
+    var Z [][]string
+
     X = trx.ToSet(trx.ReadFlatFileToSlice("test.txt"))
     Y = trx.ToSet(trx.ReadFlatFileToSlice("test2.txt"))
     
