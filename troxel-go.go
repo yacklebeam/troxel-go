@@ -7,7 +7,40 @@ import (
     "strings"
 )
 
-func stringSetContains(s []string, e string) bool {
+func FlattenStringArray(arr [][]string) []string {
+    var ret []string
+
+    for _,x := range arr {
+        for _,y := range x {
+            ret = append(ret, y)
+        }
+    }
+
+    return ret
+}
+
+func FlattenIntArray(arr [][]int) []int {
+    var ret []int
+
+    for _,x := range arr {
+        for _,y := range x {
+            ret = append(ret, y)
+        }
+    }
+
+    return ret
+}
+
+func ContainsString(s []string, e string) bool {
+    for _, a := range s {
+        if a == e {
+            return true
+        }
+    }
+    return false
+}
+
+func ContainsInt(s []int, e int) bool {
     for _, a := range s {
         if a == e {
             return true
@@ -43,7 +76,7 @@ func ToSet(list []string) []string {
     var ret []string
 
     for _, x := range list {
-        if !stringSetContains(ret, x) {
+        if !ContainsString(ret, x) {
             ret = append(ret, x)
         }
     }
@@ -55,7 +88,7 @@ func SetDifference(X, Y []string) []string {
     var ret []string
 
     for _, x := range X {
-        if !stringSetContains(Y, x) {//in x, but not y
+        if !ContainsString(Y, x) {//in x, but not y
             ret = append(ret, x)
         }
     }
@@ -67,13 +100,13 @@ func SetUnion(X, Y []string) []string {
     var ret []string
 
     for _, x := range X {
-        if !stringSetContains(ret, x) {
+        if !ContainsString(ret, x) {
             ret = append(ret, x)
         }
     }
 
     for _, y := range Y {
-        if !stringSetContains(ret, y) {
+        if !ContainsString(ret, y) {
             ret = append(ret, y)
         }
     }
@@ -85,7 +118,7 @@ func SetIntersection(X, Y []string) []string {
     var ret []string
 
     for _, x := range X {
-        if stringSetContains(Y, x) {//in x, and in y
+        if ContainsString(Y, x) {//in x, and in y
             ret = append(ret, x)
         }
     }

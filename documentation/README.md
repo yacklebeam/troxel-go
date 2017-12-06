@@ -6,8 +6,8 @@ Default namespace is "trx".
 
 Function | Parameters | Return | About
 --- | --- | --- | ---
-ReadFlatFile | filename *string* | []string | Reads flat file *filename* and returns the lines in a list.
-ReadCSVFile | filename *string* | [][]string | Reads CSV file *filename* and returns the items in an array.
+ReadFlatFile | filename *string* | []string | Reads flat file *filename* and returns the lines in a list
+ReadCSVFile | filename *string* | [][]string | Reads CSV file *filename* and returns the items in an array
 
 ### Set Functions
 
@@ -17,3 +17,10 @@ ToSet | list *[]string* | []string | Returns set (no duplicates) of values from 
 SetDifference | X, Y *[]string* | []string | Returns difference of sets *X* and *Y* (X - Y)
 SetUnion | X, Y *[]string* | []string | Returns union of sets *X* and *Y* (X v Y)
 SetIntersection | X, Y *[]string* | []string | Returns intersection of sets *X* and *Y* (X ^ Y)
+
+### Array Functions
+
+Function | Parameters | Return | About
+--- | --- | --- | ---
+FlattenStringArray | arr *[][]string* | []string | Flattens array of strings *arr* to a list
+FlattenIntArray | arr *[][]int* | []int | Flattens array of ints *arr* to a list
