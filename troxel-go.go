@@ -16,7 +16,7 @@ func stringSetContains(s []string, e string) bool {
     return false
 }
 
-func ReadFlatFileToSlice(filename string) []string {
+func ReadFlatFile(filename string) []string {
     file, err := os.Open(filename)
 
     var ret []string
@@ -93,7 +93,7 @@ func SetIntersection(X, Y []string) []string {
     return ret
 }
 
-func ReadCSVFileToList(filename string) [][]string {
+func ReadCSVFile(filename string) [][]string {
     file, err := os.Open(filename)
 
     var ret [][]string

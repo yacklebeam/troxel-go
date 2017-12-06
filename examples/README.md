@@ -17,8 +17,8 @@ func main() {
     //Reading Flat File To Sets
     var X, Y []string
     
-    X = trx.ToSet(trx.ReadFlatFileToSlice("test.txt"))
-    Y = trx.ToSet(trx.ReadFlatFileToSlice("test2.txt"))
+    X = trx.ToSet(trx.ReadFlatFile("test.txt"))
+    Y = trx.ToSet(trx.ReadFlatFile("test2.txt"))
     
     //Using Set Functions
     fmt.Println(trx.SetDifference(X, Y))
@@ -28,7 +28,7 @@ func main() {
 
     //Reading CSV File
     var Z [][]string
-    Z = trx.ReadCSVFileToList("test.csv")
+    Z = trx.ReadCSVFile("test.csv")
     
     fmt.Println(Z)
 }
