@@ -76,7 +76,7 @@ func ToSet(list []string) []string {
     var ret []string
 
     for _, x := range list {
-        if !ContainsString(ret, x) {
+        if !ContainsStr(ret, x) {
             ret = append(ret, x)
         }
     }
@@ -88,7 +88,7 @@ func SetDifference(X, Y []string) []string {
     var ret []string
 
     for _, x := range X {
-        if !ContainsString(Y, x) {//in x, but not y
+        if !ContainsStr(Y, x) {//in x, but not y
             ret = append(ret, x)
         }
     }
@@ -100,13 +100,13 @@ func SetUnion(X, Y []string) []string {
     var ret []string
 
     for _, x := range X {
-        if !ContainsString(ret, x) {
+        if !ContainsStr(ret, x) {
             ret = append(ret, x)
         }
     }
 
     for _, y := range Y {
-        if !ContainsString(ret, y) {
+        if !ContainsStr(ret, y) {
             ret = append(ret, y)
         }
     }
@@ -118,7 +118,7 @@ func SetIntersection(X, Y []string) []string {
     var ret []string
 
     for _, x := range X {
-        if ContainsString(Y, x) {//in x, and in y
+        if ContainsStr(Y, x) {//in x, and in y
             ret = append(ret, x)
         }
     }
