@@ -7,7 +7,7 @@ import (
     "strings"
 )
 
-func FlattenStringArray(arr [][]string) []string {
+func FlattenStr(arr [][]string) []string {
     var ret []string
 
     for _,x := range arr {
@@ -19,7 +19,7 @@ func FlattenStringArray(arr [][]string) []string {
     return ret
 }
 
-func FlattenIntArray(arr [][]int) []int {
+func FlattenInt(arr [][]int) []int {
     var ret []int
 
     for _,x := range arr {
@@ -31,7 +31,7 @@ func FlattenIntArray(arr [][]int) []int {
     return ret
 }
 
-func ContainsString(s []string, e string) bool {
+func ContainsStr(s []string, e string) bool {
     for _, a := range s {
         if a == e {
             return true

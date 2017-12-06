@@ -18,9 +18,11 @@ SetDifference | X, Y *[]string* | []string | Returns difference of sets *X* and 
 SetUnion | X, Y *[]string* | []string | Returns union of sets *X* and *Y* (X v Y)
 SetIntersection | X, Y *[]string* | []string | Returns intersection of sets *X* and *Y* (X ^ Y)
 
-### Array Functions
+### Array/List Functions
 
 Function | Parameters | Return | About
 --- | --- | --- | ---
-FlattenStringArray | arr *[][]string* | []string | Flattens array of strings *arr* to a list
-FlattenIntArray | arr *[][]int* | []int | Flattens array of ints *arr* to a list
+FlattenStr | arr *[][]string* | []string | Flattens array of strings *arr* to a list
+FlattenInt | arr *[][]int* | []int | Flattens array of ints *arr* to a list
+ContainsStr | arr *[]string*, e *string* | bool | Checks if list *arr* contains string *e*
+ContainsInt | arr *[]int*, e *int* | bool | Checks if list *arr* contains int *e*
