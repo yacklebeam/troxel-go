@@ -170,17 +170,17 @@ func ReadCSVFile(filename string) [][]string {
 				continue
 			}
 			if str[0] == '"' && str[len(str)-1] != '"' {
-				tempString = tempString + str
+				tempString = tempString + str[1:]
 				mid = true
 			} else if str[0] != '"' && str[len(str)-1] == '"' {
-				tempString = tempString + str
+				tempString = tempString + "," + str[:len(str)-1]
 				mid = true
 				done = true
 			} else if !mid {
 				tempString = str
 				done = true
 			} else {
-				tempString = tempString + str
+				tempString = tempString + "," + str
 			}
 			if done {
 				mid = false
