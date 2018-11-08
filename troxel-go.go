@@ -160,7 +160,36 @@ func ReadCSVFile(filename string) [][]string {
 	for scanner.Scan() {
 		var text = scanner.Text()
 		var item = strings.Split(text, ",")
-		ret = append(ret, item)
+		var realList []string
+		tempString := ""
+		done := false
+		mid := false
+		for _, str := range item {
+			if len(str) == 0 {
+				realList = append(realList, str)
+				continue
+			}
+			if str[0] == '"' && str[len(str)-1] != '"' {
+				tempString = tempString + str
+				mid = true
+			} else if str[0] != '"' && str[len(str)-1] == '"' {
+				tempString = tempString + str
+				mid = true
+				done = true
+			} else if !mid {
+				tempString = str
+				done = true
+			} else {
+				tempString = tempString + str
+			}
+			if done {
+				mid = false
+				done = false
+				realList = append(realList, tempString)
+				tempString = ""
+			}
+		}
+		ret = append(ret, realList)
 	}
 
 	if err := scanner.Err(); err != nil {
