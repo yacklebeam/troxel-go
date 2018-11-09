@@ -2,10 +2,27 @@ package trx
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"os"
 	"strings"
 )
+
+// CheckError takes an error err, and a string msg.  If err not nil, prints the error.
+func CheckError(err error, msg string) {
+	if err != nil {
+		fmt.Printf("ERROR: %v\n", msg)
+		fmt.Printf("%v\n", err)
+	}
+}
+
+// CheckErrorFatal takes an error err, and a string msg.  If err not nil, exits the program and prints the error
+func CheckErrorFatal(err error, msg string) {
+	if err != nil {
+		fmt.Printf("FATAL ERROR: %v\n", msg)
+		log.Fatal(err)
+	}
+}
 
 // FlattenStr takes an array of string arrays, and returns a single array of strings
 func FlattenStr(arr [][]string) []string {
